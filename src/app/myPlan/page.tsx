@@ -1,9 +1,15 @@
-import React from 'react';
+'use client'
+import { WorkoutContext } from '@/context/workoutProvide';
+import React, { useContext } from 'react';
+
+
 
 const MyPlanPage = () => {
+
+    const {saved} = useContext(WorkoutContext)
     return (
-        <div>
-            <p className='text-amber-50'>Hello</p>
+        <div className='text-amber-50'>
+            <p>{saved.length}</p>
             
         </div>
     );

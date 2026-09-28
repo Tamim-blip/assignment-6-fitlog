@@ -10,14 +10,16 @@ type WorkoutContextType = {
   setMyPlan: React.Dispatch<React.SetStateAction<TWorkout[]>>;
 };
 
-export const WorkoutContext = createContext<WorkoutContextType | undefined>(
-  undefined
-);
+export const WorkoutContext = createContext<WorkoutContextType>({
+  saved : [],
+    setSeved : () => {},
+    myPlan : [],
+    setMyPlan : () => {}
+});
 
 
 
-const WorkoutProvider = ({ children } : {children :  ReactNode}
-) => {
+const WorkoutProvider = ({ children } : {children :  ReactNode}) => {
   const [saved, setSeved] = useState<TWorkout[]>([]);
   const [myPlan, setMyPlan] = useState<TWorkout[]>([]);
 
