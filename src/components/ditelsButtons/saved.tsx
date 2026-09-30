@@ -27,7 +27,7 @@ const SavedButton = ({ workout }: SavedButtonProps) => {
     return (
         <div>
 
-            <button onClick={() => SavedButtonHandle ()} className="bg-[#CCFF00] text-[#0F1115] px-3 py-2 rounded-2xl cursor-pointer ">Add to today&apos;s plan</button>
+            <button onClick={() => SavedButtonHandle ()} className="bg-[#CCFF00] text-[#0F1115] px-4 py-3 rounded-2xl cursor-pointer ">Add to today&apos;s plan</button>
             
         </div>
     );

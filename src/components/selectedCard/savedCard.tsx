@@ -1,10 +1,21 @@
+import { WorkoutContext } from '@/context/workoutProvide';
 import { TWorkout } from '@/type/workoutType';
 import { Clock, Flame, Star, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 const SavedCard = ({item} : {item : TWorkout}) => {
+
+    const {saved, setSeved} = useContext(WorkoutContext)
+
+    const HandleRemove = (id : number) => {
+
+        setSeved(saved.filter(card => card.id !== id))
+        toast.success(`${item.name} is removed`)
+
+    }
     return (
         <div className='flex justify-between my-10 bg-[#232732] rounded-2xl px-5 py-3'>
                 <div className='flex gap-5'>
@@ -28,7 +39,7 @@ const SavedCard = ({item} : {item : TWorkout}) => {
                 <button className='bg-[#13161D] px-4 py-2 rounded-2xl text-[#FFFFFF] cursor-pointer'>View Details</button>
                 </Link>
                 
-                <button className='text-red-700 text-2xl cursor-pointer'><X /></button>
+                <button onClick={() => HandleRemove (item.id)} className='text-red-700 text-2xl cursor-pointer'><X /></button>
             </div>
             </div>
     );
