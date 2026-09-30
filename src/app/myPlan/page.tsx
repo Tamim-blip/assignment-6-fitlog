@@ -1,3 +1,4 @@
+
 'use client'
 import PlanPage from '@/components/dashboard/plan';
 import SavedPage from '@/components/dashboard/saved';
@@ -26,9 +27,9 @@ const MyPlanPage = () => {
 
     
     return (
-        <div className='container mx-auto mt-15 '>
-            <h1 className='font-bold text-3xl text-[#FFFFFF] mb-2'>MY PLAN</h1>
-            <p className='text-[#8A92A0]'>Cap of five lifts for today. Finish them, then load more.</p>
+        <div className='container mx-auto mt-15 px-4 sm:px-6 lg:px-8'>
+            <h1 className='font-bold text-2xl sm:text-3xl text-[#FFFFFF] mb-2'>MY PLAN</h1>
+            <p className='text-[#8A92A0] text-sm sm:text-base'>Cap of five lifts for today. Finish them, then load more.</p>
 
 
 
@@ -41,10 +42,10 @@ const MyPlanPage = () => {
             {/* dashbord end */}
 
       {/* button start */}
-<div className="flex items-center gap-2 rounded-2xl bg-[#1B1D24] p-1 w-[180]">
+<div className="flex items-center gap-1 sm:gap-2 rounded-2xl bg-[#1B1D24] p-1 w-fit">
   <button
     onClick={() => HandleButton("plan")}
-    className={`cursor-pointer rounded-xl px-6 py-2 text-sm font-medium transition-all duration-200 
+    className={`cursor-pointer rounded-xl px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-200 
         ${buttonType === "plan" ? "bg-[#2B303D] text-white shadow-sm" : "text-[#8A92A0] hover:text-white"
     }`}>
     Plan
@@ -52,7 +53,7 @@ const MyPlanPage = () => {
 
   <button
     onClick={() => HandleButton("saved")}
-    className={`cursor-pointer rounded-xl px-6 py-2 text-sm font-medium transition-all duration-200 
+    className={`cursor-pointer rounded-xl px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-200 
     ${buttonType === "saved" ? "bg-[#2B303D] text-white shadow-sm": "text-[#8A92A0] hover:text-white"
     }`}>
     Saved
@@ -62,7 +63,7 @@ const MyPlanPage = () => {
 {/* button end */}
 
 
-<div>
+<div className="mt-4 sm:mt-6">
 
     {
 
