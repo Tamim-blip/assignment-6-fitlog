@@ -1,7 +1,10 @@
 'use client'
 import PlanPage from '@/components/dashboard/plan';
 import SavedPage from '@/components/dashboard/saved';
+import PlanCard from '@/components/selectedCard/planCard';
+import SavedCard from '@/components/selectedCard/savedCard';
 import { WorkoutContext } from '@/context/workoutProvide';
+
 import React, { useContext, useState } from 'react';
 
 
@@ -59,11 +62,13 @@ const MyPlanPage = () => {
 
 
 <div>
-    {
-        saved.map(item => <div key={item.id}>
 
-        </div>)
+    {
+        buttonType === "plan" ?
+         myPlan.map(item => <PlanCard key = {item.id} item = {item}></PlanCard>) 
+         : saved.map(item => <SavedCard key = {item.id} item = {item}></SavedCard>)
     }
+    
 </div>
 
 

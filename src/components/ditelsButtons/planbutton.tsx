@@ -3,6 +3,7 @@
 import { WorkoutContext } from '@/context/workoutProvide';
 import { TWorkout } from '@/type/workoutType';
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 type SavedButtonProps = {
   workout: TWorkout;
@@ -19,14 +20,14 @@ const PlanButton = ({ workout }: SavedButtonProps) => {
 
 
     setMyPlan([...myPlan, workout])
-    alert("button is clicked")
+    toast.success("button is clicked")
 
 }
 
     return (
         <div>
 
-            <button onClick={() => MyPlanButtonHandle ()}  className="border border-amber-50 rounded-2xl text-[#D1D5DB] px-2 py-1">Save for later</button>
+            <button onClick={() => MyPlanButtonHandle ()}  className="border border-amber-50 rounded-2xl text-[#E5E7EB] px-2 py-1">Save for later</button>
             
         </div>
     );
