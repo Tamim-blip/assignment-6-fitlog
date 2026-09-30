@@ -14,12 +14,12 @@ type SavedButtonProps = {
 const SavedButton = ({ workout }: SavedButtonProps) => {
 
 
-    const {saved, setSeved} = useContext(WorkoutContext)
+    const {myPlan, setMyPlan} = useContext(WorkoutContext)
 
     const SavedButtonHandle = () => {
 
 
-    setSeved([...saved, workout])
+    setMyPlan([...myPlan, workout])
    toast.success("button is clicked")
 
 }
@@ -27,7 +27,7 @@ const SavedButton = ({ workout }: SavedButtonProps) => {
     return (
         <div>
 
-            <button onClick={() => SavedButtonHandle ()} className="bg-[#CCFF00] text-[#0F1115] px-3 py-2 rounded-2xl">Add to today&apos;s plan</button>
+            <button onClick={() => SavedButtonHandle ()} className="bg-[#CCFF00] text-[#0F1115] px-3 py-2 rounded-2xl cursor-pointer ">Add to today&apos;s plan</button>
             
         </div>
     );

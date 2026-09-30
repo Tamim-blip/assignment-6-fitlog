@@ -1,6 +1,7 @@
 'use client'
 import PlanPage from '@/components/dashboard/plan';
 import SavedPage from '@/components/dashboard/saved';
+import EmptySelected from '@/components/selectedCard/emptySelected';
 import PlanCard from '@/components/selectedCard/planCard';
 import SavedCard from '@/components/selectedCard/savedCard';
 import { WorkoutContext } from '@/context/workoutProvide';
@@ -64,10 +65,14 @@ const MyPlanPage = () => {
 <div>
 
     {
-        buttonType === "plan" ?
-         myPlan.map(item => <PlanCard key = {item.id} item = {item}></PlanCard>) 
-         : saved.map(item => <SavedCard key = {item.id} item = {item}></SavedCard>)
+
+      buttonType === "plan" ? myPlan.length > 0 ?
+         myPlan.map(item => <PlanCard key = {item.id} item = {item}></PlanCard>) : <EmptySelected></EmptySelected>
+         : saved.length > 0 ? saved.map(item => <SavedCard key = {item.id} item = {item}></SavedCard>) : <EmptySelected></EmptySelected>
+         
     }
+
+    
     
 </div>
 

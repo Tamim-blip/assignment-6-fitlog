@@ -9,8 +9,8 @@ const Library = async () => {
 
   return (
     <div className="container mx-auto">
-      <div className="my-5">
-        <h1 className="font-bold text-3xl text-[#FFFFFF]">
+      <div className="my-10">
+        <h1 className="font-bold text-3xl text-[#FFFFFF] ">
           THE LIBRARY
         </h1>
 
