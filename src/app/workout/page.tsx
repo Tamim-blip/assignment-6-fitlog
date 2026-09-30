@@ -3,7 +3,7 @@ import WorkoutCard from '../../components/shered/workoutCard';
 import { TWorkout } from '@/type/workoutType';
 
 const Library = async () => {
-  const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
+  const res = await fetch('https://api.abcz.workers.dev/api/fitlog', {cache: 'force-cache'});
 
   const data: TWorkout[] = await res.json();
 

@@ -10,7 +10,7 @@ type WorkoutCardProps = {
 
 const WorkoutCard = ({ workout }: WorkoutCardProps) => {
   return (
-    <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-[#15161b] text-white">
+  <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-[#15161b] text-white hover:border-blue-500">
       {/* Image */}
       <Link href= {`/workout/${workout.id}`}>
       <div className="relative h-62.5 w-full">

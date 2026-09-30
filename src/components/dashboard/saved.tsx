@@ -1,3 +1,5 @@
+'use client'
+
 import { WorkoutContext } from '@/context/workoutProvide';
 import React, { useContext } from 'react';
 

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
     return (
-        <div className='bg-gray-950 border border-b-blue-950'>
+        <div className='bg-gray-950 border border-b-blue-950 sticky top-0 z-50'>
             <div className='container mx-auto flex justify-between my-4'>
             <div className='flex gap-1 text-amber-50'>
                 <Image src={Imaage} alt='Nav Logo'></Image>
