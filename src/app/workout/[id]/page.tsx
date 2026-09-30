@@ -2,6 +2,7 @@ import React from "react";
 import { TWorkout } from "@/type/workoutType";
 import Image from "next/image";
 import SavedButton from "@/components/ditelsButtons/saved";
+import PlanButton from "@/components/ditelsButtons/planbutton";
 
 
 type PageDetailsProps = {
@@ -112,8 +113,9 @@ const PageDetails = async ({ params }: PageDetailsProps) => {
         <div className="my-7 flex gap-4">
 
             <SavedButton workout = {workout}></SavedButton>
+            <PlanButton workout={workout}></PlanButton>
             
-            <button  className="border border-amber-50 rounded-2xl text-[#D1D5DB] px-2 py-1">Save for later</button>
+            
         </div>
       </div>
     </div>
