@@ -18,9 +18,18 @@ const SavedButton = ({ workout }: SavedButtonProps) => {
 
     const SavedButtonHandle = () => {
 
+          const alreadySelected = myPlan.some(
+                exist => exist.id === workout.id
+            );
+        
+            if (alreadySelected) {
+                toast.error(`${workout.name} is already selected`);
+                return;
+            }
+
 
     setMyPlan([...myPlan, workout])
-   toast.success("button is clicked")
+   toast.success(`${workout.name} is added to plan list`)
 
 }
 
