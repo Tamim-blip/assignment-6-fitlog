@@ -125,9 +125,9 @@ const MyPlanPage = () => {
                             className="select w-full sm:w-40 bg-[#1B1D24] border-[#2B303D] text-white"
                         >
                             
-                            <option value={"calore"}> Calore </option>
-                            <option value={"time"}> Time </option>
-                            <option value={"rating"}>  Rating  </option>
+                            <option value={"calore"}>  Calories </option>
+                            <option value={"time"}> Duration </option>
+                            <option value={"rating"}> Rating </option>
                              </select>
                        </div>
 
