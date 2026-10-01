@@ -121,7 +121,7 @@ const MyPlanPage = () => {
                         <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as "calore" | "time" | "rating")}
-                            defaultValue="Sort by"
+                           
                             className="select w-full sm:w-40 bg-[#1B1D24] border-[#2B303D] text-white"
                         >
                             
