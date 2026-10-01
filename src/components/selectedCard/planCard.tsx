@@ -3,16 +3,32 @@ import { TWorkout } from '@/type/workoutType';
 import { Clock, Flame, Star, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 
 const PlanCard = ({ item }: { item: TWorkout }) => {
+
+    
 
     const { myPlan, setMyPlan } = useContext(WorkoutContext);
 
     const handleRemove = (id: number) => {
         setMyPlan(myPlan.filter(exist => exist.id !== id));
         toast.success(`${item.name} is removed`);
+    };
+
+    const [markAsDone, setMarkAsDone] = useState(false)
+
+    const HandleMarik = () => {
+        const newStatus = !markAsDone;
+
+        setMarkAsDone(newStatus);
+
+        if (newStatus === true) {
+            toast.success(`${item.name} marked as done`);
+        } else {
+            toast.success(`${item.name} unmarked`);
+        }
     };
 
     return (
@@ -68,8 +84,15 @@ const PlanCard = ({ item }: { item: TWorkout }) => {
                     </button>
                 </Link>
 
-                <button className="cursor-pointer rounded-2xl bg-[#CCFF00] px-3 py-2 text-sm text-[#000000] sm:px-4 sm:text-base">
-                    ✔︎ Mark as Done
+                <button
+                    onClick={HandleMarik}
+                    className={`cursor-pointer rounded-2xl px-3 py-2 text-sm sm:px-4 sm:text-base ${
+                        markAsDone
+                            ? 'bg-[#232732] text-[#CCFF00]'
+                            : 'bg-[#CCFF00] text-[#000000]'
+                    }`}
+                >
+                    {markAsDone ? '✓ Done' : '✔︎ Mark as Done'}
                 </button>
 
                 <button
